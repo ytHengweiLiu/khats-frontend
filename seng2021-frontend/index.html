@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>e-invoice validator</title>
+    <link rel="stylesheet" type="text/css" href="styles.css"></link>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  </head>
+  <body>
+    <div id="page-login">
+      <div class="login-box">
+        <h2>Login</h2>
+        <form>
+          <div class="user-box">
+            <input id="login-username" type="text" name="" required="">
+            <label>Username</label>
+          </div>
+          <div class="user-box">
+            <input id="login-password" type="password" name="" required="">
+            <label>Password</label>
+          </div>
+          <div id="login-go">
+            <a href="#">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              Submit
+            </a>  
+          </div>
+        </form>
+      </div>
+    </div>
+    <div id="page-summary">
+      <div id="summary">
+        <h2 id="">Summary</h2>
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Type</th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+              <th scope="col">Errors</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-label="Type">UBL</td>
+              <td data-label=""></td>
+              <td data-label=""></td>
+              <td id="UBL-error-amount" data-label="Errors"></td>
+            </tr>
+            <tr>
+              <td scope="row" data-label="Type">PEPPOL</td>
+              <td data-label=""></td>
+              <td data-label=""></td>
+              <td id="PEPPOL-error-amount" data-label="Errors"></td>
+            </tr>
+          </tbody>
+        </table>  
+      </div>
+      <br>
+      <div id="details">
+        <h2>Details</h2>
+      <h5>Schematron (XSLT) - external/schematron/peppol-aunz/1.0.10/xslt/AUNZ-PEPPOL-validation.xslt</h5>
+      <div id="PEPPOLerror">
+      </div>
+      <h5>Schematron (XSLT) - external/schematron/peppol-aunz/1.0.10/xslt/AUNZ-UBL-validation.xslt</h5>
+      <div id="UBLerror">
+      </div>
+      </div>
+      <div id="validate-again">
+        <br>
+        <br>
+        <div>
+          <select id="validation-rule" class="form-select" aria-label="Default select example">
+            <option value="A-NZ Peppol BIS3 Invoice (UBL) 1.0.10">A-NZ Peppol BIS3 Invoice (UBL) 1.0.10</option>
+            <option value="A-NZ Peppol BIS3 CreditNote (UBL) 1.0.9">A-NZ Peppol BIS3 CreditNote (UBL) 1.0.9</option>
+            <option value="A-NZ Peppol BIS3 CreditNote Self-Biling (UBL) 1.0.10">A-NZ Peppol BIS3 CreditNote Self-Biling (UBL) 1.0.10</option>
+            <option value="A-NZ Peppol BIS3 CreditNote Self-Biling (UBL) 1.0.9">A-NZ Peppol BIS3 CreditNote Self-Biling (UBL) 1.0.9</option>
+            <option value="A-NZ Peppol BIS3 Invoice (UBL) 1.0.10">A-NZ Peppol BIS3 Invoice (UBL) 1.0.10</option>
+            <option value="A-NZ Peppol BIS3 Invoice (UBL) 1.0.9">A-NZ Peppol BIS3 Invoice (UBL) 1.0.9</option>
+          </select>
+        </div>
+        <br>
+        <form class="upload"  id="uploadFormAgain">
+          <input type="file" id="fileInput" name="uploadFile" accept=".xml" required />
+          <br/><br/>
+          <input type="submit" id="validate-first"/>
+       </form>
+  
+      </div>
+    </div>
+
+    </div>
+    <div id="page-validation">
+      <div>
+        <select id="validation-rule" class="form-select" aria-label="Default select example">
+          <option value="A-NZ Peppol BIS3 Invoice (UBL) 1.0.10">A-NZ Peppol BIS3 Invoice (UBL) 1.0.10</option>
+          <option value="A-NZ Peppol BIS3 CreditNote (UBL) 1.0.9">A-NZ Peppol BIS3 CreditNote (UBL) 1.0.9</option>
+          <option value="A-NZ Peppol BIS3 CreditNote Self-Biling (UBL) 1.0.10">A-NZ Peppol BIS3 CreditNote Self-Biling (UBL) 1.0.10</option>
+          <option value="A-NZ Peppol BIS3 CreditNote Self-Biling (UBL) 1.0.9">A-NZ Peppol BIS3 CreditNote Self-Biling (UBL) 1.0.9</option>
+          <option value="A-NZ Peppol BIS3 Invoice (UBL) 1.0.10">A-NZ Peppol BIS3 Invoice (UBL) 1.0.10</option>
+          <option value="A-NZ Peppol BIS3 Invoice (UBL) 1.0.9">A-NZ Peppol BIS3 Invoice (UBL) 1.0.9</option>
+        </select>
+      </div>
+      <br>
+      <br>
+      <br>
+      <br>
+      <!-- <div class="input-group mb-3">
+        <label class="input-group-text" for="upload-first">Upload</label>
+        <input type="file" class="form-control" accept=".xml" id="upload-first">
+      </div> -->
+      <form class="upload"  id="uploadForm">
+        <input type="file" id="fileInput" name="uploadFile" accept=".xml" required />
+        <br/><br/>
+        <input type="submit" id="validate-first"/>
+     </form>
+      <br>
+      <br>
+      <br>
+      <br>
+      <!-- <button id="validate-go" type="button" class="btn btn-danger">Validate</button> -->
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>

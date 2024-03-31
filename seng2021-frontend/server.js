@@ -1,0 +1,1 @@
+const LOCAL_SERVER = "http://localhost:3001"
