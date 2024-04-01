@@ -32,7 +32,7 @@ uploadForm.addEventListener('submit', function(e) {
     let formData = new FormData()
     formData.append('file', file)
     console.log(formData);
-    fetch('http://localhost:3001/invoice-validator/upload-invoice', {
+    fetch('https://asish.alwaysdata.net/invoice-validator/upload-invoice', {
         method: 'POST',
         body: formData
     })
@@ -57,7 +57,7 @@ uploadFormAgain.addEventListener('submit', function(e) {
     let formData = new FormData()
     formData.append('file', file)
     console.log(formData);
-    fetch('http://localhost:3001/invoice-validator/upload-invoice', {
+    fetch('https://asish.alwaysdata.net/invoice-validator/upload-invoice', {
         method: 'POST',
         body: formData
     })
@@ -92,7 +92,7 @@ document.getElementById('summary-validate-go').addEventListener('click', () => {
 
 
 function megFromBackend() {
-    fetch('http://localhost:3001', {
+    fetch('https://asish.alwaysdata.net/', {
         method: 'GET',
         headers: {
             'Content-type': 'application/json',
@@ -109,7 +109,7 @@ function megFromBackend() {
 }
 
 function uploadFile(file) {
-    fetch('http://localhost:3001/invoice-validator/upload-invoice', {
+    fetch('https://asish.alwaysdata.net/invoice-validator/upload-invoice', {
         method: 'POST',
         headers: {
             'Content-type': 'application/json',
@@ -127,7 +127,7 @@ function uploadFile(file) {
 }
 
 function viladateFile(invoiceTag) {
-    fetch(`http://localhost:3001/invoice-validator/validate-invoice?invoiceTag=${invoiceTag}`, {
+    fetch(`https://asish.alwaysdata.net/invoice-validator/validate-invoice?invoiceTag=${invoiceTag}`, {
         method: 'GET',
         headers: {
             'Content-type': 'application/json',
