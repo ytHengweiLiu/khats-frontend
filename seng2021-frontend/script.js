@@ -155,6 +155,7 @@ function viladateFile(invoiceTag) {
                     noErrorDom.style.color = '#5CB85C';
                     document.getElementById('UBLerror').appendChild(noErrorDom);
                     document.getElementById('UBLerror').appendChild(spaceDom);
+                    document.getElementById('UBL-column').style.backgroundColor = '#5CB85C';
                 } else {
                     for (const error of UBL) {
                         const spaceDom = document.createElement('br');
@@ -191,6 +192,7 @@ function viladateFile(invoiceTag) {
                         errorDom.appendChild(errorMsgDom);
                         errorDom.appendChild(spaceDom);
                         document.getElementById('UBLerror').appendChild(errorDom);
+                        document.getElementById('UBL-column').style.backgroundColor = '#F93549';
                     }
                 }
                 if (PEPPOLNumber === 0) {
@@ -199,6 +201,7 @@ function viladateFile(invoiceTag) {
                     noErrorDom.style.color = '#5CB85C';
                     document.getElementById('PEPPOLerror').appendChild(noErrorDom);
                     document.getElementById('PEPPOLerror').appendChild(spaceDom);
+                    document.getElementById('PEPPOL-column').style.backgroundColor = '#5CB85C';
                 } else {
                     for (const error of PEPPOL) {
                         const spaceDom = document.createElement('br');
@@ -235,6 +238,7 @@ function viladateFile(invoiceTag) {
                         errorDom.appendChild(errorMsgDom);
                         errorDom.appendChild(spaceDom);
                         document.getElementById('PEPPOLerror').appendChild(errorDom);
+                        document.getElementById('PEPPOL-column').style.backgroundColor = '#F93549';
                     }
                 }
             }
