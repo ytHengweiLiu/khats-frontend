@@ -45,8 +45,8 @@ uploadForm.addEventListener('submit', function(e) {
             console.log(data)
         }
     })
-    goToPage('summary');
     viladateFile(fileName);
+    goToPage('summary');
 });
 
 const uploadFormAgain = document.getElementById('uploadFormAgain');
