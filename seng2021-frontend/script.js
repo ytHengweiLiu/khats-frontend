@@ -46,7 +46,6 @@ uploadForm.addEventListener('submit', function(e) {
         }
     })
     viladateFile(fileName);
-    goToPage('summary');
 });
 
 const uploadFormAgain = document.getElementById('uploadFormAgain');
@@ -237,6 +236,7 @@ function viladateFile(invoiceTag) {
                         document.getElementById('PEPPOLerror').appendChild(errorDom);
                     }
                 }
+                goToPage('summary');
             }
         });
     });
